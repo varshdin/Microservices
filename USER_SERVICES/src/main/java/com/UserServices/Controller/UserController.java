@@ -1,5 +1,10 @@
 package com.UserServices.Controller;
 
+
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.UserServices.Services.UserService;
+import com.UserServices.Services.impl.Userserviceimpl;
 import com.UserServices.entity.User;
 
 @RestController
@@ -21,6 +28,8 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+
 	
 	 //create
     @PostMapping
@@ -36,6 +45,8 @@ public class UserController {
 
         User user = userService.getUser(userId);
         return ResponseEntity.ok(user);
+        
+       
     }
 
   //all user get
