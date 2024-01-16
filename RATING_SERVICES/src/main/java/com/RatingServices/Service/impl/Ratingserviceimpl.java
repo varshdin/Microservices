@@ -19,7 +19,7 @@ public class Ratingserviceimpl implements RatingService {
 	@Override
 	public Rating create(Rating rating) {
 		String randomUserId = UUID.randomUUID().toString();
-		rating.setRatingId(randomUserId);
+		rating.setRRatingId(randomUserId);
 		return ratingrepository.save(rating);
 	}
 

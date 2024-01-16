@@ -1,34 +1,33 @@
 package com.RatingServices.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name="tbl_rating")
+
+
+@Document("tbl_rating")
 public class Rating {
 
 	
 	@Id
-	@Column(name="Id")
     private String ratingId;
 	
-	@Column(name="userId")
+	
     private String userId;
 	
-	@Column(name="hotelId")
+
     private String hotelId;
 	
-	@Column(name="rating")
+
     private  int rating;
-	
-	@Column(name="feedback")
+
     private  String feedback;
+	
+	
 	public String getRatingId() {
 		return ratingId;
 	}
-	public void setRatingId(String ratingId) {
+	public void setRRatingId(String ratingId) {
 		this.ratingId = ratingId;
 	}
 	public String getUserId() {
